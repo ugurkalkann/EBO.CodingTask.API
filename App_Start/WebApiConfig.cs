@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace EBO.CodingTask.API
 {
@@ -10,6 +11,8 @@ namespace EBO.CodingTask.API
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            var cors = new EnableCorsAttribute("*", "*", "*"); //allow all
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
