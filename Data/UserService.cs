@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace EBO.CodingTask.API.Data
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private List<User> userList = new List<User>();
         public UserService()
