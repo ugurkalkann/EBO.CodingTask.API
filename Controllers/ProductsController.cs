@@ -28,5 +28,12 @@ namespace EBO.CodingTask.API.Controllers
         {
             return _productRepository.OrderProduct(request);
         }
+
+        [HttpGet]
+        [Route("api/values/product/GetOrderProductHistory")]
+        public IEnumerable<OrderProductDetail> GetOrderProductHistory()
+        {
+            return _productRepository.GetOrderProductHistory();
+        }
     }
 }
