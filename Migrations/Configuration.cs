@@ -1,19 +1,17 @@
+using EBO.CodingTask.API.Data;
+using EBO.CodingTask.API.Models;
+using System.Data.Entity.Migrations;
+
 namespace EBO.CodingTask.API.Migrations
 {
-    using EBO.CodingTask.API.Models;
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<EBO.CodingTask.API.Data.OnlineShopContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<OnlineShopContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EBO.CodingTask.API.Data.OnlineShopContext context)
+        protected override void Seed(OnlineShopContext context)
         {
             context.Products.AddOrUpdate(p => p.Name, new Product { ProductID = 1, Name = "Product1", Description = "Definition of Product1" });
             context.Products.AddOrUpdate(p => p.Name, new Product { ProductID = 2, Name = "Product2", Description = "Definition of Product2" });
