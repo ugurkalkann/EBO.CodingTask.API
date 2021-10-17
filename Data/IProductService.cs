@@ -8,6 +8,6 @@ namespace EBO.CodingTask.API.Data
         IEnumerable<Product> GetAllProducts();
         Product GetProduct(int productID);
         Product OrderProduct(OrderProductRequest request);
-        IEnumerable<OrderProductDetail> GetOrderProductHistory();
+        IEnumerable<OrderProductDetail> GetOrderProductHistory(int productID);
     }
 }

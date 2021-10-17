@@ -40,9 +40,9 @@ namespace EBO.CodingTask.API.Data
             return GetProduct(request.ProductID);
         }
 
-        public IEnumerable<OrderProductDetail> GetOrderProductHistory()
+        public IEnumerable<OrderProductDetail> GetOrderProductHistory(int productID)
         {
-            return Orders.ToList();
+            return Orders.Where(o => o.ProductID == productID).OrderByDescending(o => o.OrderDate).ToList();
         }
         #endregion
 

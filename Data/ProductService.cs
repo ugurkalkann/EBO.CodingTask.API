@@ -1,6 +1,7 @@
 ﻿using EBO.CodingTask.API.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EBO.CodingTask.API.Data
 {
@@ -37,9 +38,9 @@ namespace EBO.CodingTask.API.Data
             return GetProduct(request.ProductID);
         }
 
-        public IEnumerable<OrderProductDetail> GetOrderProductHistory()
+        public IEnumerable<OrderProductDetail> GetOrderProductHistory(int productID)
         {
-            return orderProductHistory;
+            return orderProductHistory.Where(o => o.ProductID == productID).OrderByDescending(o => o.OrderDate);
         }
     }
 }
