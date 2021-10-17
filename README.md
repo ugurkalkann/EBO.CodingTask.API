@@ -1,4 +1,4 @@
-# EboCodingtaskWeb
+# EBO.CodingTask.API
 
 .Net 4.7.2 Web API application  
 
