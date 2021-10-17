@@ -53,7 +53,7 @@ namespace EBO.CodingTask.API.Data
             if (loginRequest == null || string.IsNullOrEmpty(loginRequest.Username) || string.IsNullOrEmpty(loginRequest.Password))
             {
                 result.IsSuccessful = false;
-                result.Message = "Credentials cannot be empty!";
+                result.Message = Constants.LOGIN_ERROR_EMPTY_CREDENTIALS;
             }
             else
             {
@@ -65,7 +65,7 @@ namespace EBO.CodingTask.API.Data
                 else
                 {
                     result.IsSuccessful = false;
-                    result.Message = "Invalid Username and/or Password!";
+                    result.Message = Constants.LOGIN_ERROR_INVALID_CREDENTIALS;
                 }
             }
 

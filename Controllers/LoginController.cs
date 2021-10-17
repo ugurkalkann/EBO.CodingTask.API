@@ -15,6 +15,7 @@ namespace EBO.CodingTask.API.Controllers
         {
             _userRepository = userRepository;
         }
+
         public AuthResponse Post([FromBody] User loginRequest)
         {
             return _userRepository.Login(loginRequest);
