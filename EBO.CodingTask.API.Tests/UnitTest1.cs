@@ -1,4 +1,5 @@
 ﻿using EBO.CodingTask.API.Controllers;
+using EBO.CodingTask.API.Data;
 using EBO.CodingTask.API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -12,7 +13,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestLogin1()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new UserService());
 
             var response = controller.Post(
                 new Models.User
@@ -27,7 +28,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestLogin2()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new UserService());
 
             var response = controller.Post(
                 new Models.User
@@ -42,7 +43,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestLoginMessage1()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new UserService());
 
             var response = controller.Post(
                 new Models.User
@@ -57,7 +58,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestLoginMessage2()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new UserService());
 
             var response = controller.Post(
                 new User
@@ -72,7 +73,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestProductList()
         {
-            var controller = new ProductsController();
+            var controller = new ProductsController(new ProductService());
 
             var response = controller.Get();
 
@@ -82,7 +83,7 @@ namespace EBO.CodingTask.API.Tests
         [TestMethod]
         public void TestProduct()
         {
-            var controller = new ProductsController();
+            var controller = new ProductsController(new ProductService());
 
             var response = controller.GetProduct(1);
 
