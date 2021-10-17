@@ -28,6 +28,7 @@ namespace EBO.CodingTask.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public Product OrderProduct([FromBody] OrderProductRequest request)
         {
             return _productRepository.OrderProduct(request);

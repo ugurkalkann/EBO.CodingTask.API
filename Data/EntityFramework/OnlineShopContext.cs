@@ -1,4 +1,5 @@
 ﻿using EBO.CodingTask.API.Models;
+using EBO.CodingTask.API.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -61,6 +62,7 @@ namespace EBO.CodingTask.API.Data
                 {
                     result.IsSuccessful = true;
                     result.UserInfo = Users.First(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
+                    result.AuthToken = JWTUtils.CreateAuthToken();
                 }
                 else
                 {

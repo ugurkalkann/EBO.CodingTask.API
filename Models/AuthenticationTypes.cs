@@ -9,6 +9,7 @@ namespace EBO.CodingTask.API.Models
     {
         public bool IsSuccessful { get; set; }
         public string Message { get; set; }
+        public string AuthToken { get; set; }
         public User UserInfo { get; set; }
 
         public AuthResponse()
