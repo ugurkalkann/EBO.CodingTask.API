@@ -16,7 +16,9 @@ namespace EBO.CodingTask.API.Migrations
                     UserID = c.Int(nullable: false),
                     OrderDate = c.DateTime(nullable: false),
                 })
-                .PrimaryKey(t => t.OrderID);
+                .PrimaryKey(t => t.OrderID)
+                .ForeignKey("dbo.Products", t => t.ProductID, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserID, cascadeDelete: true);
 
             CreateTable(
                 "dbo.Products",

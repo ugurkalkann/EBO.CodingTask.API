@@ -25,7 +25,7 @@ namespace EBO.CodingTask.API.Migrations
             context.Users.AddOrUpdate(p => p.Username, new User { UserID = 3, Username = "User3", Password = "Password3" });
             context.Users.AddOrUpdate(p => p.Username, new User { UserID = 4, Username = "User4", Password = "Password4" });
 
-            context.Database.ExecuteSqlCommand("TRUNCATE TABLE dbo.Orders");
+            context.Database.ExecuteSqlCommand("TRUNCATE TABLE dbo.Orders"); //Delete all order history on start
         }
     }
 }
