@@ -7,8 +7,14 @@ namespace EBO.CodingTask.API.Controllers
     public class LoginController : ApiController
     {
         //private static readonly IUserService _userRepository = new UserService(); //In-memory data manipulation
-        private static readonly IUserService _userRepository = new OnlineShopContext(); //SQL Server (EF) data manipulation
-        // POST: api/Login
+        private readonly IUserService _userRepository = new OnlineShopContext(); //SQL Server (EF) data manipulation
+
+        public LoginController() { }
+
+        public LoginController(IUserService userRepository)
+        {
+            _userRepository = userRepository;
+        }
         public AuthResponse Post([FromBody] User loginRequest)
         {
             return _userRepository.Login(loginRequest);

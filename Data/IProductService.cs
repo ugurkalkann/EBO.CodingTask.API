@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EBO.CodingTask.API.Data
 {
-    interface IProductService
+    public interface IProductService
     {
         IEnumerable<Product> GetAllProducts();
         Product GetProduct(int productID);

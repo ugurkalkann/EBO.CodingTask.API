@@ -8,7 +8,14 @@ namespace EBO.CodingTask.API.Controllers
     public class ProductsController : ApiController
     {
         //private static readonly IProductService _productRepository = new ProductService(); //In-memory data manipulation
-        private static readonly IProductService _productRepository = new OnlineShopContext(); //SQL Server (EF) data manipulation
+        private readonly IProductService _productRepository = new OnlineShopContext(); //SQL Server (EF) data manipulation
+
+        public ProductsController() { }
+
+        public ProductsController(IProductService productRepository)
+        {
+            _productRepository = productRepository;
+        }
 
         public IEnumerable<Product> Get()
         {

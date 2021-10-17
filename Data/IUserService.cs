@@ -2,7 +2,7 @@
 
 namespace EBO.CodingTask.API.Data
 {
-    interface IUserService
+    public interface IUserService
     {
         AuthResponse Login(User loginRequest);
     }
